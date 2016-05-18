@@ -14,9 +14,21 @@ public class ReverseString {
         return new String(charArray);
     }
 
+    public static String reverseSentence(String sentence) {
+        StringBuilder sb = new StringBuilder(sentence.length() + 1);
+        String[] words = sentence.split(" ");
+        for (int i = words.length - 1; i >= 0; i--) {
+            sb.append(words[i]).append(' ');
+        }
+        sb.setLength(sb.length() - 1);  // removes trailing spaces
+        return sb.toString();
+    }
+
     public static void main(String[] args) {
 
         String strA = "hello";
+        String strB = "hello world!";
         System.out.println(reverseString(strA));
+        System.out.println(reverseSentence(strB));
     }
 }
